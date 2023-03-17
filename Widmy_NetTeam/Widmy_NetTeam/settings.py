@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Historia_Clinica',
     'Consulta',
     'Paciente',
+    'Profesional_Salud',
 ]
 
 MIDDLEWARE = [

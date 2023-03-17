@@ -1,7 +1,7 @@
 from django.db import models
 
 class Historia_Clinica (models.Model):
-    id_historia = models.CharField(max_length=10)
+    id_historia = models.CharField(max_length=10, primary_key=True)
     fechaCreacion = models.CharField(max_length=50)
     fechaUltimaActualizacion = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=2000)
