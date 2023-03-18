@@ -1,11 +1,17 @@
 from django.db import models
 
+from Paciente.models import Paciente
+from Antecedentes.models import Antecedentes
+from Procedimientos.models import Procedimientos
+
 class Historia_Clinica (models.Model):
-    id_historia = models.CharField(max_length=10, primary_key=True)
-    fechaCreacion_historia_clinica = models.CharField(max_length=50)
-    fechaUltimaActualizacion_historia_clinica = models.CharField(max_length=50)
-    descripcion_historia_clinica = models.CharField(max_length=2000)
+    id_Historia_Clinica = models.CharField(max_length=10)
+    paciente = models.OneToOneField(Paciente, on_delete=models.CASCADE, primary_key=True)
+    fecha_Creacion = models.CharField(max_length=50)
+    fecha_Ultima_Actualizacion = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=2000)
+    antecedentes = models.ForeignKey(Antecedentes, on_delete=models.CASCADE, default=None)
+    procedimientos = models.ForeignKey(Procedimientos, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        #return '%s %s %s %s' % (self.id_historia, self.fechaCreacion_historia_clinica, self.fechaUltimaActualizacion_historia_clinica, self.descripcion_historia_clinica)
-        return '{}'.format(self.id_historia)
+        return '{}'.format(self.paciente)
