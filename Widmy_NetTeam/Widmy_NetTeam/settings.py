@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Profesional_Salud',
     'Antecedentes',
     'Procedimientos',
+    'ExamenMedico',
 ]
 
 MIDDLEWARE = [
