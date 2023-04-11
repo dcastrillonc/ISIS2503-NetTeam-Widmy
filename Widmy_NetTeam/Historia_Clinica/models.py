@@ -3,6 +3,7 @@ from django.db import models
 from Paciente.models import Paciente
 from Antecedentes.models import Antecedentes
 from Procedimientos.models import Procedimientos
+from ExamenMedico.models import ExamenMedico
 
 class Historia_Clinica (models.Model):
     id_Historia_Clinica = models.CharField(max_length=10)
@@ -12,6 +13,7 @@ class Historia_Clinica (models.Model):
     descripcion = models.CharField(max_length=2000)
     antecedentes = models.ForeignKey(Antecedentes, on_delete=models.CASCADE, default=None)
     procedimientos = models.ForeignKey(Procedimientos, on_delete=models.CASCADE, default=None)
+    examen_Medico = models.ForeignKey(ExamenMedico, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return '{}'.format(self.paciente)
