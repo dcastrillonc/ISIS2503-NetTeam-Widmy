@@ -5,5 +5,5 @@ from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
-    path('historia_clinica/', views.historia_list),
+    path('Historia_Clinica/', views.historia_list),
 ]
