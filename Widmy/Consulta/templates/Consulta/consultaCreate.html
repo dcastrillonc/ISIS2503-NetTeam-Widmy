@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+    <div class="">
+        <div class="page-header-title">
+            <h4 class="page-title">Registro de Consultas Médicas</h4>
+        </div>
+    </div>
+    {% csrf_token %}
+    <br>
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success waves-effect waves-light" onClick=" window.location.href='/Consultas' ">Registrar Consulta</button>
+    <button type="button" class="btn btn-primary waves-effect waves-light"
+                                onClick=" window.location.href='/Consultas' ">Back
+    </button>
+</form>
+{% endblock %}

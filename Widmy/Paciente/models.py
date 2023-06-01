@@ -11,5 +11,5 @@ class Paciente (Usuario):
     prioridad = models.CharField(max_length=20)
 
     def __str__(self):
-        return '{} - {} {}'.format(self.nombre_Completo, self.tipo_Identificacion, self.identificacion)
+        return '{}'.format(self.nombre_Completo, self.tipo_Identificacion, self.identificacion)
     

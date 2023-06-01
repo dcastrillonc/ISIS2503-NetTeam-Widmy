@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content">
+    <div class="">
+        <div class="page-header-title">
+            <h4 class="page-title">Historias Clínicas</h4>
+        </div>
+    </div>
+    <br>
+    <div class="page-content-wrapper">
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr style="color:#0E2EB0">
+                            <th font color="red">ID</th>
+                            <th>Nombre del Paciente</th>
+                            <th>Fecha Última Actualización</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for Historia_Clinica in historias_list %}
+                        <tr>
+                            <td>{{ Historia_Clinica.id_Historia_Clinica }}</td>
+                            <td>{{ Historia_Clinica.paciente }}</td>
+                            <td>{{ Historia_Clinica.fecha_Ultima_Actualizacion }}</td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

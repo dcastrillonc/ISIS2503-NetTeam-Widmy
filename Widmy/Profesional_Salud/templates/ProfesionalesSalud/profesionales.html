@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content">
+    <div class="">
+        <div class="page-header-title">
+            <h4 class="page-title">Profesionales de la Salud</h4>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="page-content-wrapper">
+        <div class="container">
+            <!-- Content page -->
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr style="color:#0E2EB0">
+                            <th font color="red">ID</th>
+                            <th>Nombre</th>
+                            <th>Identificación</th>
+                            <th>Rol</th>
+                            <th>Especialidad</th>
+                            <th>Sede</th>
+                            <th>Consultorio</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for Profesional_Salud in profesionales_list %}
+                        <tr>
+                            <td>{{ Profesional_Salud.id_Usuario }}</td>
+                            <td>{{ Profesional_Salud.nombre_Completo }}</td>
+                            <td>{{ Profesional_Salud.identificacion }}</td>
+                            <td>{{ Profesional_Salud.rol }}</td>
+                            <td>{{ Profesional_Salud.especialidad }}</td>
+                            <td>{{ Profesional_Salud.sede }}</td>
+                            <td>{{ Profesional_Salud.consultorio }}</td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                    <div style="text-align:center;">
+                        <button type="button" class="btn btn-primary waves-effect waves-light"
+                                onClick=" window.location.href='/ProfesionalSaludCreate' ">
+                            Back
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

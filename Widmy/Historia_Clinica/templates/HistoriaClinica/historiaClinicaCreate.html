@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="">
+        <div class="page-header-title">
+            <h4 class="page-title">Creación de Historia Clínica</h4>
+        </div>
+    </div>
+    <br>
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success waves-effect waves-light" 
+    onClick=" window.location.href='/HistoriasClinicas/' ">Crear Historia Clinica</button>
+    <button type="button" class="btn btn-primary waves-effect waves-light"
+    onClick=" window.location.href='/HistoriasClinicas/' ">Back </button>
+</form>
+{% endblock %}
